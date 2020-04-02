@@ -1,0 +1,15 @@
+@mixin button ($b-color, $color, $width, $height) {
+
+    background-color: $b-color;
+    border: none;
+    border-radius: 8px;
+    width: $width;
+    height: $height;
+    color: $color;
+    font-weight: bold;
+    font-size: 2.66rem;
+    outline: none;
+
+
+
+}
