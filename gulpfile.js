@@ -1,46 +1,47 @@
-var gulp = require('gulp');
-var concat = require('gulp-concat');
-var prefix = require('gulp-autoprefixer')
-var sass = require('gulp-sass');
-var watch = require('gulp-watch')
+const {
+    src,
+    dest,
+    watch,
+    series,
+    parallel
+} = require("gulp");
+const autoprefixer = require("autoprefixer");
+const cssnano = require("cssnano");
+const concat = require("gulp-concat");
+const postcss = require("gulp-postcss");
+const sass = require("gulp-sass");
+const sourcemaps = require("gulp-sourcemaps");
+const uglify = require("gulp-uglify");
+// const fileinclude = require("gulp-file-include");
 
+const files = {
+    scssPath: "app/sass/**/*.scss",
+    jsPath: "app/js/**/*.js"
+};
 
+//Sass task
 
-//first task 
+function scssTask() {
+    return src(files.scssPath)
+        .pipe(sourcemaps.init())
+        .pipe(sass().on("error", sass.logError))
+        .pipe(postcss([autoprefixer("last 2 version"), cssnano()]))
+        .pipe(sourcemaps.write("."))
+        .pipe(dest("dist/css"));
+}
+//JavaScript task
 
-gulp.task('gulptask', function () {
+function jsTask() {
+    return src([files.jsPath])
+        .pipe(concat("general.js"))
+        .pipe(uglify())
+        .pipe(dest("dist/js"));
+}
+// Watching Task
+function watchTask() {
+    watch([files.scssPath, files.jsPath], series(parallel(scssTask, jsTask)));
+}
 
-    console.log('hello everybody')
-});
+exports.default = series(parallel(scssTask, jsTask), watchTask);
 
-
-
-//html task 
-
-
-//css task 
-
-gulp.task('css', function () {
-    return gulp.src('Starter-file/sass/style.scss')
-        .pipe(sass())
-        .pipe(prefix('last 2 version'))
-        .pipe(gulp.dest('dist/css'))
-
-
-
-
-});
-
-
-//js task 
-
-
-
-
-//watch task 
-
-
-gulp.task('watch', function () {
-    gulp.watch('Starter-file/sass/style.scss', gulp.series(['css']));
-
-});
+// npm install --save-dev gulp gulp-sass gulp-sourcemaps gulp-postcss autoprefixer cssnano gulp-concat gulp-uglify 
