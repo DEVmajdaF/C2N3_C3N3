@@ -12,12 +12,24 @@ const postcss = require("gulp-postcss");
 const sass = require("gulp-sass");
 const sourcemaps = require("gulp-sourcemaps");
 const uglify = require("gulp-uglify");
-// const fileinclude = require("gulp-file-include");
+var pug = require('gulp-pug');
+
 
 const files = {
     scssPath: "app/sass/**/*.scss",
     jsPath: "app/js/**/*.js"
 };
+
+//html task 
+function htmlTask() {
+    return src("index.pug")
+        .pipe(pug({
+            pretty: true
+        }))
+        .pipe(dest('./'));
+
+}
+
 
 //Sass task
 
@@ -39,9 +51,9 @@ function jsTask() {
 }
 // Watching Task
 function watchTask() {
-    watch([files.scssPath, files.jsPath], series(parallel(scssTask, jsTask)));
+    watch([files.scssPath, files.jsPath], series(parallel(scssTask, jsTask, htmlTask)));
 }
 
-exports.default = series(parallel(scssTask, jsTask), watchTask);
+exports.default = series(parallel(scssTask, jsTask, htmlTask), watchTask);
 
 // npm install --save-dev gulp gulp-sass gulp-sourcemaps gulp-postcss autoprefixer cssnano gulp-concat gulp-uglify 

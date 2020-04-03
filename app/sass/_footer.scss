@@ -1,19 +1,18 @@
 .Hero_Footer {
-    background-color: #96C5DC;
-    height: 17.5rem;
 
     .footer_1 {
+        background-color: #96C5DC;
+        height: auto;
         display: flex;
         flex-direction: column;
         align-items: center;
+        border-bottom-right-radius: 7px;
+        border-bottom-left-radius: 7px;
 
         h1 {
-            font-size: 2.5rem;
+            font-size: 1.8rem;
             font-weight: bold;
             color: #1078AD;
-
-
-
         }
 
         img {
@@ -22,11 +21,96 @@
 
         button {
             margin-top: 20px;
-            @include button (#1078AD, white, 49rem, 4rem);
-            font-size: 3rem;
+            margin-bottom: 25px;
+            @include button (#1078AD, white, 36.5rem, 3.4rem, 2.3rem);
             font-weight: bold;
             line-height: 1;
         }
 
     }
+
+    .footer_2 {
+        height: auto;
+        margin-bottom: 40px;
+
+        .footer_2_img {
+            img {
+                margin: 20px auto;
+                display: block;
+            }
+        }
+
+
+        .footer_2_text {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+
+            .ftr_2_joze1 {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+
+                button {
+                    @include head-foot-btn(black);
+
+                    img {
+                        margin-left: 20px;
+                    }
+
+
+                }
+
+                a {
+                    text-decoration: none;
+                    margin-left: 70px;
+                    font-weight: bold;
+                    font-size: 1.2rem;
+                    color: #1078AD;
+                    margin-top: 25px;
+
+
+
+                }
+
+            }
+
+            .ftr_2_joze2 {
+                h1 {
+                    font-size: 1.6rem;
+                    font-weight: bold;
+                    color: #1078AD;
+                }
+
+                .num {
+                    color: #369D53;
+                }
+
+                p {
+                    font-size: 1.18rem;
+                    font-weight: bold;
+                    color: #2B2B2C;
+                }
+            }
+
+            .ftr_2_joze3 {
+                font-size: 1.12rem;
+                font-weight: normal;
+                color: #7F7F7F;
+            }
+        }
+
+    }
+
+
+}
+
+.line {
+    height: 2rem;
+    border-top-right-radius: 7px;
+    border-top-left-radius: 7px;
+    background-color: #1078AD;
+    z-index: 10;
 }

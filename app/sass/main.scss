@@ -19,12 +19,13 @@
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
+    margin-top: 40px;
 
 
 
     .main_doc-image {
         img {
-            width: 830px;
+            width: 700px;
         }
     }
 
@@ -35,24 +36,31 @@
 
         h1 {
             color: #1078AD;
-            font-size: 2.5rem;
+            font-size: 2rem;
             font-weight: bold;
             line-height: 1.3;
+        }
+
+        img {
+            width: 85px;
+            margin: 20px;
         }
 
         p {
 
             color: #7F7F7F;
-            font-size: 2.5rem;
+            font-size: 2rem;
             font-weight: bold;
             line-height: 1.4;
+            margin-bottom: 20px;
 
         }
 
 
         button {
 
-            @include button(#1078AD, white, 50.7rem, 4.7rem);
+            @include button(#1078AD, white, 38.25rem, 3.25rem, 2rem);
+            line-height: 1;
 
         }
     }
@@ -63,43 +71,45 @@
     color: #1078AD;
     text-align: center;
     font-weight: bold;
-    font-size: 2.9rem;
+    font-size: 2.1rem;
     margin-top: 70px;
     margin-bottom: 30px;
 }
 
 .symptômes {
     text-align: center;
-    max-width: 45rem;
-    height: 45rem;
-    margin: 0px auto;
+    max-width: 36.4rem;
+    height: auto;
+    margin: 80px auto;
+
 
 
     .symptômes_1 {
         display: flex;
         flex-direction: row;
+        flex-wrap: wrap;
         justify-content: space-between;
 
 
         .symptômes_1_1 {
             img {
-                height: 182px;
+                height: 150px;
             }
 
             h3 {
-                font-size: 2.1rem;
-                font-weight: bolder;
+                font-size: 2rem;
+                font-weight: 600;
             }
         }
 
         .symptômes_1_2 {
             img {
-                height: 182px;
+                height: 150px;
             }
 
             h3 {
-                font-size: 2.1rem;
-                font-weight: bolder;
+                font-size: 2rem;
+                font-weight: 600;
             }
         }
     }
@@ -108,29 +118,30 @@
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        flex-wrap: wrap;
 
 
 
         .symptômes_2_1 {
             img {
-                height: 182px;
+                height: 150px;
 
             }
 
             h3 {
-                font-size: 2.1rem;
-                font-weight: bolder;
+                font-size: 2rem;
+                font-weight: 600;
             }
         }
 
         .symptômes_2_2 {
             img {
-                height: 182px;
+                height: 150px;
             }
 
             h3 {
-                font-size: 2.1rem;
-                font-weight: bolder;
+                font-size: 2rem;
+                font-weight: 600;
             }
         }
 
@@ -140,13 +151,13 @@
 
 .Recommandations {
     background-color: #1078AD;
-    height: 32.75rem;
+    height: auto;
 
 
     h1 {
         text-align: center;
         font-weight: bold;
-        font-size: 2.9rem;
+        font-size: 2.1rem;
         color: #D0E5F0;
     }
 
@@ -160,47 +171,52 @@
         max-width: 1794px;
         margin: 0px auto;
 
+
         .Recommandations_1 {
             margin-left: 20px;
+            padding-bottom: 20px;
 
             p span {
                 color: black;
-                font-size: 2.5rem;
+                font-size: 1.8rem;
                 font-weight: 600;
             }
 
             p {
                 color: white;
-                font-size: 2.5rem;
+                font-size: 1.8rem;
                 font-weight: 600;
-                line-height: 1.4;
+                line-height: 2;
             }
 
         }
 
         .Recommandations_2 {
             margin-right: 5.81rem;
+            margin-bottom: 50px;
             display: flex;
             flex-direction: column;
             align-items: center;
 
 
             .apl {
-                line-height: 3.7;
-                font-size: 2.58rem;
+
+                font-size: 1.9rem;
                 font-weight: bold;
                 color: rgb(240, 203, 41);
+                margin-bottom: 2.75rem;
             }
 
             button {
                 font-family: Arial;
-                @include button(rgb(240, 203, 41), #1078AD, 21.5rem, 6.3rem);
+                @include button(rgb(240, 203, 41), #1078AD, 15rem, 4.8rem, 1.8rem);
                 margin-bottom: 2.75rem;
+
             }
 
             .govsite {
                 font-family: Arial;
-                font-size: 2.58rem;
+                font-size: 1.6rem;
                 font-weight: normal;
                 color: white;
                 border-bottom: 2px solid rgb(240, 203, 41);
