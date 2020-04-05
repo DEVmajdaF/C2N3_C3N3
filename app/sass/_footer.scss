@@ -6,22 +6,23 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        border-bottom-right-radius: 7px;
-        border-bottom-left-radius: 7px;
+        border-bottom-right-radius: 0.44rem;
+        border-bottom-left-radius: 0.44rem;
 
         h1 {
+            text-align: center;
             font-size: 1.8rem;
             font-weight: bold;
             color: #1078AD;
         }
 
         img {
-            width: 106px;
+            width: 6.625rem;
         }
 
         button {
-            margin-top: 20px;
-            margin-bottom: 25px;
+            margin-top: 1.25rem;
+            margin-bottom: 1.56rem;
             @include button (#1078AD, white, 36.5rem, 3.4rem, 2.3rem);
             font-weight: bold;
             line-height: 1;
@@ -31,11 +32,11 @@
 
     .footer_2 {
         height: auto;
-        margin-bottom: 40px;
+        margin-bottom: 2.5rem;
 
         .footer_2_img {
             img {
-                margin: 20px auto;
+                margin: 1.25rem auto;
                 display: block;
             }
         }
@@ -44,8 +45,10 @@
         .footer_2_text {
             display: flex;
             flex-direction: row;
+            flex-wrap: wrap;
             justify-content: space-around;
             align-items: center;
+
 
             .ftr_2_joze1 {
                 display: flex;
@@ -57,7 +60,7 @@
                     @include head-foot-btn(black);
 
                     img {
-                        margin-left: 20px;
+                        margin-left: 1.25rem;
                     }
 
 
@@ -65,11 +68,16 @@
 
                 a {
                     text-decoration: none;
-                    margin-left: 70px;
+                    margin-left: 4.375rem;
                     font-weight: bold;
                     font-size: 1.2rem;
                     color: #1078AD;
-                    margin-top: 25px;
+                    margin-top: 1.56rem;
+
+                    @include responsive(tablet) {
+                        margin-top: 0.9rem;
+
+                    }
 
 
 
@@ -99,6 +107,18 @@
                 font-size: 1.12rem;
                 font-weight: normal;
                 color: #7F7F7F;
+
+
+                @include responsive(tablet) {
+                    font-size: 1.5rem;
+
+                }
+
+                @include responsive(phone) {
+                    font-size: 2.8rem;
+                    text-align: center;
+
+                }
             }
         }
 
@@ -109,8 +129,8 @@
 
 .line {
     height: 2rem;
-    border-top-right-radius: 7px;
-    border-top-left-radius: 7px;
+    border-top-right-radius: 0.44rem;
+    border-top-left-radius: 0.44rem;
     background-color: #1078AD;
     z-index: 10;
 }

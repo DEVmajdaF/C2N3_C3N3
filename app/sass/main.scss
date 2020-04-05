@@ -1,13 +1,33 @@
+@import '_media-querry';
 @import 'mixin';
 @import 'header';
 @import 'footer';
+
 
 
 * {
     margin: 0px;
     padding: 0px;
     font-family: 'Cairo', sans-serif;
-    font-size: 1rem;
+    font-size: 100%;
+
+
+    @include responsive(desktop) {
+        font-size: 95%;
+    }
+
+    @include responsive(big-tablet) {
+        font-size: 90%;
+    }
+
+    @include responsive(tablet) {
+        font-size: 85%;
+    }
+
+    @include responsive(phone) {
+        font-size: 50%;
+
+    }
 
 }
 
@@ -19,13 +39,21 @@
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
-    margin-top: 40px;
+    margin-top: 2.5rem;
+
+    @include responsive(phone) {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 30px auto;
+        text-align: center;
+    }
 
 
 
     .main_doc-image {
         img {
-            width: 700px;
+            width: 43.75rem;
         }
     }
 
@@ -42,8 +70,8 @@
         }
 
         img {
-            width: 85px;
-            margin: 20px;
+            width: 5.3rem;
+            margin: 1.25rem;
         }
 
         p {
@@ -52,7 +80,7 @@
             font-size: 2rem;
             font-weight: bold;
             line-height: 1.4;
-            margin-bottom: 20px;
+            margin-bottom: 1.25rem;
 
         }
 
@@ -64,6 +92,7 @@
 
         }
     }
+
 }
 
 
@@ -72,15 +101,17 @@
     text-align: center;
     font-weight: bold;
     font-size: 2.1rem;
-    margin-top: 70px;
-    margin-bottom: 30px;
+    margin-top: 4.37rem;
+    margin-bottom: 1.875rem;
+    text-align: center;
 }
 
 .symptômes {
     text-align: center;
     max-width: 36.4rem;
     height: auto;
-    margin: 80px auto;
+    margin: 5rem auto;
+
 
 
 
@@ -93,23 +124,25 @@
 
         .symptômes_1_1 {
             img {
-                height: 150px;
+                height: 9.37rem;
             }
 
             h3 {
                 font-size: 2rem;
                 font-weight: 600;
+                text-align: center;
             }
         }
 
         .symptômes_1_2 {
             img {
-                height: 150px;
+                height: 9.37rem;
             }
 
             h3 {
                 font-size: 2rem;
                 font-weight: 600;
+                text-align: center;
             }
         }
     }
@@ -124,7 +157,7 @@
 
         .symptômes_2_1 {
             img {
-                height: 150px;
+                height: 9.37rem;
 
             }
 
@@ -136,7 +169,7 @@
 
         .symptômes_2_2 {
             img {
-                height: 150px;
+                height: 9.37rem;
             }
 
             h3 {
@@ -151,6 +184,7 @@
 
 .Recommandations {
     background-color: #1078AD;
+    width: 100%;
     height: auto;
 
 
@@ -159,27 +193,68 @@
         font-weight: bold;
         font-size: 2.1rem;
         color: #D0E5F0;
+
+        @include responsive(big-tablet) {
+            margin-bottom: 2rem;
+        }
+
+        @include responsive(tablet) {
+            margin-bottom: 2rem;
+        }
+
+        @include responsive(phone) {
+            margin-bottom: 2rem;
+        }
     }
 
 
     .Recommandations_main {
         display: flex;
         flex-direction: row;
+        flex-wrap: wrap;
         justify-content: space-between;
         align-items: center;
         align-content: space-around;
-        max-width: 1794px;
+        max-width: 112.12rem;
         margin: 0px auto;
 
 
+        @include responsive(big-tablet) {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        @include responsive(phone) {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+        }
+
+
+
+
+
         .Recommandations_1 {
-            margin-left: 20px;
-            padding-bottom: 20px;
+            margin-left: 1.25rem;
+            padding-bottom: 1.25rem;
 
             p span {
                 color: black;
                 font-size: 1.8rem;
                 font-weight: 600;
+
+                @include responsive(big-tablet) {
+                    color: white;
+                }
+
+                @include responsive(tablet) {
+                    color: white;
+                }
+
+                @include responsive(phone) {
+                    color: white;
+                }
             }
 
             p {
@@ -193,10 +268,27 @@
 
         .Recommandations_2 {
             margin-right: 5.81rem;
-            margin-bottom: 50px;
+            margin-bottom: 3.12rem;
             display: flex;
             flex-direction: column;
             align-items: center;
+
+            @include responsive(big-tablet) {
+                margin-top: 2rem;
+                margin-right: 0rem;
+            }
+
+            @include responsive(tablet) {
+                margin-top: 2rem;
+                margin-right: 0rem;
+            }
+
+            @include responsive(phone) {
+                margin-top: 2rem;
+                margin-right: 0rem;
+
+            }
+
 
 
             .apl {
@@ -205,12 +297,38 @@
                 font-weight: bold;
                 color: rgb(240, 203, 41);
                 margin-bottom: 2.75rem;
+
+                @include responsive(big-tablet) {
+                    margin-bottom: 0.75rem;
+                }
+
+
+                @include responsive(tablet) {
+                    margin-bottom: 0.75rem;
+                }
+
+                @include responsive(phone) {
+                    margin-bottom: 0.75rem;
+
+                }
             }
 
             button {
                 font-family: Arial;
                 @include button(rgb(240, 203, 41), #1078AD, 15rem, 4.8rem, 1.8rem);
                 margin-bottom: 2.75rem;
+
+                @include responsive(big-tablet) {
+                    margin-bottom: 0.75rem;
+                }
+
+                @include responsive(tablet) {
+                    margin-bottom: 0.75rem;
+                }
+
+                @include responsive(phone) {
+                    margin-bottom: 0.75rem;
+                }
 
             }
 
@@ -219,7 +337,7 @@
                 font-size: 1.6rem;
                 font-weight: normal;
                 color: white;
-                border-bottom: 2px solid rgb(240, 203, 41);
+                border-bottom: 0.125rem solid rgb(240, 203, 41);
             }
 
         }
