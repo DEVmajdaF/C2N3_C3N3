@@ -30,6 +30,15 @@ function htmlTask() {
 
 }
 
+function html2Task() {
+    return src("conseil.pug")
+        .pipe(pug({
+            pretty: true
+        }))
+        .pipe(dest('./'));
+
+}
+
 
 //Sass task
 
@@ -51,9 +60,9 @@ function jsTask() {
 }
 // Watching Task
 function watchTask() {
-    watch([files.scssPath, files.jsPath], series(parallel(scssTask, jsTask, htmlTask)));
+    watch([files.scssPath, files.jsPath], series(parallel(scssTask, jsTask, htmlTask, html2Task)));
 }
 
-exports.default = series(parallel(scssTask, jsTask, htmlTask), watchTask);
+exports.default = series(parallel(scssTask, jsTask, htmlTask, html2Task), watchTask);
 
 // npm install --save-dev gulp gulp-sass gulp-sourcemaps gulp-postcss autoprefixer cssnano gulp-concat gulp-uglify 
