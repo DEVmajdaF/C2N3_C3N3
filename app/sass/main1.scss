@@ -1,0 +1,272 @@
+@import '_media-querry';
+@import 'mixin';
+@import 'header';
+@import 'footer';
+
+
+
+* {
+    padding: 0;
+    margin: 0;
+    font-size: 100%;
+
+}
+
+.conseil {
+    h1 {
+        text-align: center;
+        color: #1078AD;
+        font-size: 1.87rem;
+        margin-top: 20px;
+    }
+
+    .protec {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        margin: 20px auto;
+
+        .protec_1_1 {
+            img {
+                margin-top: 30px;
+            }
+        }
+
+
+
+        div {
+            margin: 20px;
+            padding: 10px;
+            width: 30%;
+        }
+
+        h3 {
+            font-size: 1.125rem;
+            color: #1078AD;
+            text-align: center;
+        }
+
+        img {
+            margin: 0 auto;
+            display: block;
+
+
+        }
+
+    }
+
+
+
+
+
+
+
+    .stay-home {
+
+        margin-top: 3.125rem;
+        margin-bottom: 3.125rem;
+
+        h3 {
+            font-size: 1.125rem;
+            color: #1078AD;
+            text-align: center;
+            margin-top: 1.25rem;
+        }
+
+        img {
+            margin: 0 auto;
+            display: block;
+        }
+    }
+
+    .information {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-around;
+        background-color: #D0E5F0;
+        height: 16rem;
+
+        @include responsive(tablet) {
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 30rem;
+
+
+
+
+        }
+
+        @include responsive(phone) {
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 30rem;
+
+
+
+
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #1078AD;
+
+        }
+
+        p {
+            font-size: 1.5625rem;
+            color: #1A519E;
+            line-height: 2.5;
+        }
+
+        button {
+            @include button(#1078AD, white, 14.8rem, 4.2rem, 1.06rem)
+        }
+    }
+
+
+
+    .symph1 {
+        color: #1078AD;
+        text-align: center;
+        font-weight: bold;
+        font-size: 2.1rem;
+        margin-top: 4.37rem;
+        margin-bottom: 1.875rem;
+        text-align: center;
+    }
+
+    .symptômes {
+        text-align: center;
+        max-width: 36.4rem;
+        height: auto;
+        margin: 5rem auto;
+
+
+
+
+        .symptômes_1 {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+
+
+            .symptômes_1_1 {
+                img {
+                    height: 9.37rem;
+                }
+
+                h3 {
+                    font-size: 2rem;
+                    font-weight: 600;
+                    text-align: center;
+                }
+            }
+
+            .symptômes_1_2 {
+                img {
+                    height: 9.37rem;
+                }
+
+                h3 {
+                    font-size: 2rem;
+                    font-weight: 600;
+                    text-align: center;
+                }
+            }
+        }
+
+        .symptômes_2 {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            flex-wrap: wrap;
+
+
+
+            .symptômes_2_1 {
+                img {
+                    height: 9.37rem;
+
+                }
+
+                h3 {
+                    font-size: 2rem;
+                    font-weight: 600;
+                }
+            }
+
+            .symptômes_2_2 {
+                img {
+                    height: 9.37rem;
+                }
+
+                h3 {
+                    font-size: 2rem;
+                    font-weight: 600;
+                }
+            }
+
+        }
+
+    }
+
+    .covidtransmet {
+        h1 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.1875rem;
+        }
+
+        .covidtransmet_1 {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+            margin-bottom: 80px;
+
+
+
+            .covidtransmet_1_1 {
+
+                h3 {
+                    color: #1A519E;
+                    font-size: 1.625rem;
+                    text-align: center;
+
+                }
+
+                img {
+                    width: 105px;
+                    display: block;
+                    margin: 0 auto;
+
+
+                }
+            }
+
+            .covidtransmet_1_2 {
+                h3 {
+                    color: #1A519E;
+                    font-size: 1.625rem;
+                    text-align: center;
+                }
+
+                img {
+                    display: block;
+                    margin: 0 auto;
+
+                }
+            }
+
+        }
+
+    }
+}
