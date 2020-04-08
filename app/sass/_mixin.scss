@@ -9,6 +9,7 @@
     font-weight: bold;
     font-size: $fsize;
     outline: none;
+    cursor: pointer;
 
 
 
@@ -27,6 +28,8 @@
     font-weight: bolder;
     font-size: 1.7rem;
     outline: none;
+    cursor: pointer;
+
     @include responsive(tablet) {
         width: 120px;
         height: 40px;

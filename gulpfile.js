@@ -22,23 +22,13 @@ const files = {
 
 //html task 
 function htmlTask() {
-    return src("index.pug")
+    return src("*.pug")
         .pipe(pug({
             pretty: true
         }))
         .pipe(dest('./'));
 
 }
-
-function html2Task() {
-    return src("conseil.pug")
-        .pipe(pug({
-            pretty: true
-        }))
-        .pipe(dest('./'));
-
-}
-
 
 //Sass task
 
@@ -60,9 +50,9 @@ function jsTask() {
 }
 // Watching Task
 function watchTask() {
-    watch([files.scssPath, files.jsPath], series(parallel(scssTask, jsTask, htmlTask, html2Task)));
+    watch([files.scssPath, files.jsPath], series(parallel(scssTask, jsTask, htmlTask)));
 }
 
-exports.default = series(parallel(scssTask, jsTask, htmlTask, html2Task), watchTask);
+exports.default = series(parallel(scssTask, jsTask, htmlTask), watchTask);
 
 // npm install --save-dev gulp gulp-sass gulp-sourcemaps gulp-postcss autoprefixer cssnano gulp-concat gulp-uglify 

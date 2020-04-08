@@ -1,1 +1,1 @@
-$(function(){$("#include_header").load("header.html")});
+var dmrTest=document.getElementById("btn").onclick=function(){location.href="dist/html/demar-test.html"};
