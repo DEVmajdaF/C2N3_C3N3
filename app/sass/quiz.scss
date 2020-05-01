@@ -64,40 +64,130 @@
     }
 }
 
-.preambule {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    height: auto;
+.progress {
+    border-radius: 20px;
+    width: 30%;
+    height: 1.5rem;
+    background-color: #E6F1F7;
+    margin: 0 auto;
+
+
+    .progress-done {
+        height: 1.5rem;
+        width: 2.17%;
+        background-color: #1078AD;
+        border-radius: 20px;
+        // display: flex;
+        // align-items: center;
+        // justify-content: center;
+        // box-shadow: 0 3px 3px -5px rgb(228, 228, 228), 0 2px 5px rgb(112, 173, 242);
+        // opacity: 0;
+        transition: 1s ease 0.3s;
+    }
+
+}
+
+
+#form {
     width: 70%;
-    background-color: #96C5DC;
-    margin: 0px auto;
-    border-radius: 5px;
+    height: auto;
+    margin: 0 auto;
+    height: 300px;
 
-    h1 {
-        font-size: 2rem;
-        color: #1078AD;
+
+    #form_question {
+        text-align: center;
+        font-size: 2.56rem;
+        color: #787878;
+
     }
 
-    p {
-        font-size: 1.5rem;
-        color: black;
-        font-weight: 600;
-    }
+    #answers {
+        height: 318px;
+        width: 700px;
 
-    .line2 {
-        height: 3px;
-        background-color: #F4CF1B;
-        width: 30%;
-        margin: 50px auto;
+
+
+
+
     }
 }
 
-.testbtn {
-    @include button(#1078AD, white, 30rem, 4rem, 2rem);
-    line-height: 1;
-    margin: 50px auto;
-    display: block;
-    margin-bottom: 80px;
+// .inputs{
+//     display: flex;
+//     flex-direction: column;
+// }
+
+
+// .radioContainer {
+//     display: inline-block;
+//     position: relative;
+//     cursor: pointer;
+//     font-size: 22px;
+//     user-select: none;
+//     padding-left: 30px;
+
+//     input {
+//         display: none;
+
+//     }
+
+//     .circle {
+//         display: inline-block;
+//         width: 25px;
+//         height: 25px;
+//         background-color: rgb(156, 131, 131);
+//         position: absolute;
+//         left: 0;
+//         top: 0;
+//         border-radius: 50%;
+//     }
+
+//     input:checked+.circle {
+//         background-color: royalblue;
+//     }
+
+//     input:checked+.circle:after {
+//         content: "";
+//         height: 14px;
+//         width: 14px;
+//         background-color: rgb(255, 255, 255);
+//         position: absolute;
+//         border-radius: 50%;
+//         top: 50%;
+//         left: 50%;
+//         transform: translate(-50%, -50%);
+//     }
+
+// }
+
+// .radioContainer:hover .circle {
+//     background-color: rgb(104, 8, 194);
+// }
+
+.btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+    margin: 0 auto;
+
+    #next {
+
+        @include button(#1078AD, white, 19rem, 5.25rem, 2rem);
+    }
+
+    #back {
+        @include button(#1078AD, white, 19rem, 5.25rem, 2rem);
+    }
+
+    #submit {
+        @include button(#1078AD, white, 19rem, 5.25rem, 2rem);
+
+    }
+
+
+
+
 
 }
