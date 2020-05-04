@@ -7,143 +7,158 @@
     <title>Quiz</title>
   </head>
   <body>
-    <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="dist/css/main.css">
-    <title>Corona virus</title>
-</head>
-
-<body>
-
-
-
     <section class="hero-header">
-        <div class="navbar">
-            <div class="navbar_logo">
-                <img src="Design/Assets/png/logo__sante.png" alt="logo">
-            </div>
-            <div class="navbar_btn">
-                <a href="conseil.html">Conseil</a>
-                <a href="index.html">Accueil</a>
-                <button class="arabi" href=""> عربي <img src="Design/Assets/SVG/globe (1).svg" width="25px"
-                        alt=""></button>
-            </div>
+    <div class="navbar">
+        <div class="navbar_logo">
+            <img src="Design/Assets/png/logo__sante.png" alt="logo">
         </div>
-        
-    </section>
-
-</body>
-
-</html><!DOCTYPE html>
-<html lang="en">
-
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="dist/css/quiz.css">
-  <title>Document</title>
-</head>
-
-<body>
-
-
-  <div class="processus">
-    <div class="info">
-      <div></div>
-      <h4>information</h4>
+        <div class="navbar_btn">
+            <a href="conseil.html">Conseil</a>
+            <a href="index.html">Accueil</a>
+            <button class="arabi" href=""> عربي <img src="Design/Assets/SVG/globe (1).svg" width="25px" alt=""></button>
+        </div>
     </div>
-    <div class="quest">
-      <div></div>
-      <h4>questionnaire</h4>
+
+</section><div class="processus">
+
+  <div class="processus-info">
+    <div class="processus-info-cercle1"> <span class="span1 "></span></div>
+
+    <h4>information</h4>
+  </div>
+  <div class="processus-quest">
+    <div class="processus-quest-cercle1"> <span class="span2 hide"></span></div>
+
+    <h4>questionnaire</h4>
+  </div>
+  <div class="processus-result">
+    <div class="processus-result-cercle1"> <span class="span3 hide"></span></div>
+
+    <h4>résultat</h4>
+  </div>
+</div>
+
+<div id="preambule" class="hide">
+  <h1>Préambule</h1>
+  <p>L’application est fournie à titre gratuit, en l’état, uniquement à des fins d’information pour contribuer à
+    fluidifier la prise en charge des personnes par les services d’urgences pendant l’épidémie de Coronavirus
+    COVID-19. L’exhaustivité, l’exactitude, le caractère à jour des informations et contenus mis à disposition dans
+    cette application, ou leur adéquation à des finalités particulières, ne sont pas garantis.</p>
+
+  <div class="line2"></div>
+  <p>L’utilisation de l’application et de son contenu ne remplace en aucun cas le conseil nécessaire donné par votre
+    médecin ou votre pharmacien ou tout autre professionnel de santé compétent dans chaque cas particulier. Tout
+    examen
+    ou
+    décision de l’utilisateur doit être réalisé ou prise de manière autonome sur la base de l’information scientifique
+    et
+    clinique pertinente, de la notice officielle du produit concerné le cas échéant et en cas de doute, en consultant
+    un
+    médecin compétent.</p>
+  <button onclick="shownext()" id="testbtn">Demarer le test</button>
+</div>
+
+
+<div id="form" class="hide">
+
+
+
+  <p id="form_question"></p>
+  <div id="answers">
+
+  </div>
+  <div class="btn">
+    <button id="back">Question D'avant</button>
+    <button id="submit">Submit</button>
+    <button id="next">Question Suivante </button>
+
+  </div>
+</div>
+
+
+
+<div id="resultat" class="hide">
+  <h1>Resultat</h1>
+  <p id="resultat_paragra1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio exercitationem
+    earum voluptate omnis
+    officiis nostrum sit, ab, ad doloremque, vero modi nihil accusamus labore repudiandae nobis! Dicta ipsa
+    accusantium molestias..</p>
+
+  <div class="line2"></div>
+  <p class="resultat_paragra2">Restez chez vous au maximum en attendant que les symptômes disparaissent. Prenez
+    votre température deux fois par jour. Rappel des mesures d’hygiène.</p>
+  <a href="quiz.html" class="testbtn">Demarer le test</a>
+</div>
+
+
+
+<section class="Recommandations">
+  <h1>Recommandations officielles </h1>
+  <div class="Recommandations_main">
+    <div class="Recommandations_1">
+      <p>
+        <span>Si vous pensez être malade,</span><br>
+        évitez les endroits publics. <br> Ne rendez pas visite aux personnes fragiles.<br>
+        Évitez de sortir de chez vous.<br>
+        Respectez les mesures barrière (lavage de main, masque).<br>
+        Surveillez vos symptômes, l’évolution de votre température <br>
+        corporelle et recherchez un avis médical.
+
+      </p>
+
     </div>
-    <div class="result">
-      <div></div>
-      <h4>résultat</h4>
+    <div class="Recommandations_2">
+      <h3 class="apl">Appel Gratuit</h3>
+      <button>080 100 47 47</button>
+      <h3 class="govsite">www.sante.gov.ma</h3>
+
     </div>
   </div>
-  <div class="progress">
-    <div class="progress-done"></div>
-  </div>
-
-  <div id="form">
-
-    <p id="form_question"></p>
-    <div id="answers">
-
-    </div>
-    <div class="btn">
-      <button id="back">Question D'avant</button>
-      <button id="submit">Submit</button>
-      <button id="next">Question Suivante </button>
-
-    </div>
-    <script src="js/script1.js"></script>
-</body><!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="dist/css/main.css">
-    <title>Document</title>
-</head>
-
-<body>
 
 
-    <section class="Hero_Footer">
 
-        <div class="footer_2">
-            <div class="footer_2_img">
-                <img src="Design/Assets/png/logo__sante.png" alt="">
-            </div>
-            <div class="footer_2_1">
-                <div class="footer_2_text">
+</section>
+<script src="js/script1.js"></script><section class="Hero_Footer">
 
-                    <div class="ftr_2_joze1">
-                        <button class="arabi" href=""> FRAN <img src="Design/Assets/SVG/globe (1).svg" width="25px"
-                                alt=""></button>
+    <div class="footer_2">
+        <div class="footer_2_img">
+            <img src="Design/Assets/png/logo__sante.png" alt="">
+        </div>
+        <div class="footer_2_1">
+            <div class="footer_2_text">
 
-                        <a href="index.html">Accueil</a>
-                        <a href="conseil.html">Conseil</a>
+                <div class="ftr_2_joze1">
+                    <button class="arabi" href=""> FRAN <img src="Design/Assets/SVG/globe (1).svg" width="25px"
+                            alt=""></button>
 
-                    </div>
-                    <div class="ftr_2_joze2">
-                        <h1>Contacts utiles</h1>
-                        <p>Chiffre économique "Alo épidémie vigilance"</p>
-                        <h1 class="num">080 100 47 47</h1>
-                        <p>Aide médicale urgente</p>
-                        <h1 class="num">114</h1>
-                    </div>
-                    <div class="ftr_2_joze3">
-                        <p>Algorithme d'orientation mis à jour sur les recommandations en vigueur<br>
-                            au 22/03/2020 à 16h15. Ce site d’information n’est pas un dispositif médical,<br>
-                            il ne délivre pas d’avis médical. Projet solidaire d'urgence,financé par l’Alliance<br>
-                            Digitale contre le COVID-19 : @maladiecovid19</p>
-                    </div>
+                    <a href="index.html">Accueil</a>
+                    <a href="conseil.html">Conseil</a>
 
                 </div>
+                <div class="ftr_2_joze2">
+                    <h1>Contacts utiles</h1>
+                    <p>Chiffre économique "Alo épidémie vigilance"</p>
+                    <h1 class="num">080 100 47 47</h1>
+                    <p>Aide médicale urgente</p>
+                    <h1 class="num">114</h1>
+                </div>
+                <div class="ftr_2_joze3">
+                    <p>Algorithme d'orientation mis à jour sur les recommandations en vigueur<br>
+                        au 22/03/2020 à 16h15. Ce site d’information n’est pas un dispositif médical,<br>
+                        il ne délivre pas d’avis médical. Projet solidaire d'urgence,financé par l’Alliance<br>
+                        Digitale contre le COVID-19 : @maladiecovid19</p>
+                </div>
+
             </div>
-
-        </div>
-        <div class="line">
-            <div></div>
         </div>
 
-    </section>
+    </div>
+    <div class="line">
+        <div></div>
+    </div>
 
-
-
-    
-
-</body>
-
-</html>
+</section>
+<script src="js/script1.js"></script>
     <script src="js/script1.js"></script>
   </body>
 </html>

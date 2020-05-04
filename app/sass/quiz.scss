@@ -5,6 +5,35 @@
 
 
 
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Cairo', sans-serif;
+    font-size: 100%;
+
+
+
+    @include responsive(desktop) {
+        font-size: 95%;
+    }
+
+    @include responsive(big-tablet) {
+        font-size: 90%;
+    }
+
+    @include responsive(tablet) {
+        font-size: 85%;
+    }
+
+    @include responsive(phone) {
+        font-size: 50%;
+
+    }
+
+}
+
+
+
 .processus {
     display: flex;
     flex-direction: row;
@@ -12,18 +41,35 @@
     width: 40%;
     margin: 40px auto;
     text-align: center;
+    position: relative;
 
 
-
-    .info {
-        div {
-            width: 15px;
-            height: 15px;
+    .processus-info {
+        .processus-info-cercle1 {
+            width: 30px;
+            height: 30px;
             background-color: #1078AD;
             border-radius: 50%;
             margin: 0 auto;
+            position: relative;
+
+            .span1 {
+
+
+                width: 15px;
+                height: 15px;
+                background-color: #F4CF1B;
+                border-radius: 50%;
+                margin: 0 auto;
+                position: absolute;
+                top: 27%;
+                left: 28%;
+
+            }
 
         }
+
+
 
         h4 {
             font-size: 1rem;
@@ -31,15 +77,36 @@
         }
     }
 
-    .quest {
-        div {
-            width: 15px;
-            height: 15px;
+    .processus-quest {
+
+        .processus-quest-cercle1 {
+            width: 30px;
+            height: 30px;
             background-color: #1078AD;
             border-radius: 50%;
             margin: 0 auto;
+            position: relative;
+
+            .span2 {
+
+
+                width: 15px;
+                height: 15px;
+                background-color: #F4CF1B;
+                border-radius: 50%;
+                margin: 0 auto;
+                position: absolute;
+                top: 27%;
+                left: 25%;
+
+                &.hide {
+                    display: none;
+                }
+
+            }
 
         }
+
 
         h4 {
             font-size: 1rem;
@@ -47,15 +114,35 @@
         }
     }
 
-    .result {
-        div {
-            width: 15px;
-            height: 15px;
+    .processus-result {
+        .processus-result-cercle1 {
+            width: 30px;
+            height: 30px;
             background-color: #1078AD;
             border-radius: 50%;
             margin: 0 auto;
+            position: relative;
+
+            .span3 {
+
+
+                width: 15px;
+                height: 15px;
+                background-color: #F4CF1B;
+                border-radius: 50%;
+                margin: 0 auto;
+                position: absolute;
+                top: 27%;
+                left: 28%;
+
+                &.hide {
+                    display: none;
+                }
+
+            }
 
         }
+
 
         h4 {
             font-size: 1rem;
@@ -64,35 +151,70 @@
     }
 }
 
-.progress {
-    border-radius: 20px;
-    width: 30%;
-    height: 1.5rem;
-    background-color: #E6F1F7;
-    margin: 0 auto;
 
 
-    .progress-done {
-        height: 1.5rem;
-        width: 2.17%;
-        background-color: #1078AD;
-        border-radius: 20px;
-        // display: flex;
-        // align-items: center;
-        // justify-content: center;
-        // box-shadow: 0 3px 3px -5px rgb(228, 228, 228), 0 2px 5px rgb(112, 173, 242);
-        // opacity: 0;
-        transition: 1s ease 0.3s;
+#preambule {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    height: auto;
+    width: 70%;
+    background-color: #96C5DC;
+    margin: 0px auto;
+    border-radius: 5px;
+    line-height: 1.7;
+
+
+    h1 {
+        font-size: 2rem;
+        color: #1078AD;
+    }
+
+    p {
+        font-size: 1.5rem;
+        color: black;
+        font-weight: 600;
+    }
+
+    .line2 {
+        height: 3px;
+        background-color: #F4CF1B;
+        width: 30%;
+        margin: 50px auto;
+    }
+
+    #testbtn {
+        @include button(#1078AD, white, 30rem, 4rem, 2rem);
+        text-decoration: none;
+        margin: 50px auto;
+
+        margin-bottom: 5rem;
+        line-height: 1.8;
+
+        @include responsive(phone) {
+            width: auto;
+
+        }
+
+    }
+
+    &.hide {
+        display: block;
     }
 
 }
+
 
 
 #form {
     width: 70%;
     height: auto;
     margin: 0 auto;
-    height: 300px;
+    height: 609px;
+
+
+
+
 
 
     #form_question {
@@ -103,67 +225,85 @@
     }
 
     #answers {
-        height: 318px;
+        height: 290px;
         width: 700px;
+        position: relative;
 
 
+        input[type=number] {
+            position: absolute;
+            top: 40%;
+            left: 68%;
+            width: 400px;
+            height: 50px;
+            font-size: 24px;
+            font-weight: 500;
+            border: 2px solid #1078AD;
+            border-radius: 5px;
+            color: #1078AD;
 
-
-
+        }
     }
+
+    &.hide {
+        display: none;
+    }
+
+
 }
 
-// .inputs{
-//     display: flex;
-//     flex-direction: column;
-// }
 
 
-// .radioContainer {
-//     display: inline-block;
-//     position: relative;
-//     cursor: pointer;
-//     font-size: 22px;
-//     user-select: none;
-//     padding-left: 30px;
 
-//     input {
-//         display: none;
 
-//     }
 
-//     .circle {
-//         display: inline-block;
-//         width: 25px;
-//         height: 25px;
-//         background-color: rgb(156, 131, 131);
-//         position: absolute;
-//         left: 0;
-//         top: 0;
-//         border-radius: 50%;
-//     }
+#resultat {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    height: auto;
+    width: 70%;
+    background-color: #96C5DC;
+    margin: 0px auto;
+    border-radius: 5px;
 
-//     input:checked+.circle {
-//         background-color: royalblue;
-//     }
 
-//     input:checked+.circle:after {
-//         content: "";
-//         height: 14px;
-//         width: 14px;
-//         background-color: rgb(255, 255, 255);
-//         position: absolute;
-//         border-radius: 50%;
-//         top: 50%;
-//         left: 50%;
-//         transform: translate(-50%, -50%);
-//     }
+    h1 {
+        font-size: 2rem;
+        color: #1078AD;
+    }
 
-// }
+    p {
+        font-size: 1.5rem;
+        color: black;
+        font-weight: 600;
+    }
 
-// .radioContainer:hover .circle {
-//     background-color: rgb(104, 8, 194);
-// }
+    .line2 {
+        height: 3px;
+        background-color: #F4CF1B;
+        width: 30%;
+        margin: 50px auto;
+    }
+
+    a {
+        @include button(#1078AD, white, 30rem, 4rem, 2rem);
+        text-decoration: none;
+        margin: 50px auto;
+        display: block;
+        margin-bottom: 80px;
+        line-height: 1.8;
+
+    }
+
+    &.hide {
+        display: none;
+    }
+
+}
+
+
+
 
 .btn {
     display: flex;
@@ -188,6 +328,173 @@
 
 
 
+
+
+}
+
+
+.Recommandations {
+    background-color: #1078AD;
+    width: 100%;
+    height: auto;
+    margin-top: 50px;
+
+
+    h1 {
+        text-align: center;
+        font-weight: bold;
+        font-size: 2.1rem;
+        color: #D0E5F0;
+
+        @include responsive(big-tablet) {
+            margin-bottom: 2rem;
+        }
+
+        @include responsive(tablet) {
+            margin-bottom: 2rem;
+        }
+
+        @include responsive(phone) {
+            margin-bottom: 2rem;
+        }
+    }
+
+
+    .Recommandations_main {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        align-content: space-around;
+        max-width: 112.12rem;
+        margin: 0px auto;
+
+
+        @include responsive(big-tablet) {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        @include responsive(phone) {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+        }
+
+
+
+
+
+        .Recommandations_1 {
+            margin-left: 1.25rem;
+            padding-bottom: 1.25rem;
+
+            p span {
+                color: black;
+                font-size: 1.8rem;
+                font-weight: 600;
+
+                @include responsive(big-tablet) {
+                    color: white;
+                }
+
+                @include responsive(tablet) {
+                    color: white;
+                }
+
+                @include responsive(phone) {
+                    color: white;
+                }
+            }
+
+            p {
+                color: white;
+                font-size: 1.8rem;
+                font-weight: 600;
+                line-height: 2;
+            }
+
+        }
+
+        .Recommandations_2 {
+            margin-right: 5.81rem;
+            margin-bottom: 3.12rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            @include responsive(big-tablet) {
+                margin-top: 2rem;
+                margin-right: 0rem;
+            }
+
+            @include responsive(tablet) {
+                margin-top: 2rem;
+                margin-right: 0rem;
+            }
+
+            @include responsive(phone) {
+                margin-top: 2rem;
+                margin-right: 0rem;
+
+            }
+
+
+
+            .apl {
+
+                font-size: 1.9rem;
+                font-weight: bold;
+                color: rgb(240, 203, 41);
+                margin-bottom: 2.75rem;
+
+                @include responsive(big-tablet) {
+                    margin-bottom: 0.75rem;
+                }
+
+
+                @include responsive(tablet) {
+                    margin-bottom: 0.75rem;
+                }
+
+                @include responsive(phone) {
+                    margin-bottom: 0.75rem;
+
+                }
+            }
+
+            button {
+                font-family: Arial;
+                @include button(rgb(240, 203, 41), #1078AD, 15rem, 4.8rem, 1.8rem);
+                margin-bottom: 2.75rem;
+
+                @include responsive(big-tablet) {
+                    margin-bottom: 0.75rem;
+                }
+
+                @include responsive(tablet) {
+                    margin-bottom: 0.75rem;
+                }
+
+                @include responsive(phone) {
+                    margin-bottom: 0.75rem;
+                }
+
+            }
+
+            .govsite {
+                font-family: Arial;
+                font-size: 1.6rem;
+                font-weight: normal;
+                color: white;
+                border-bottom: 0.125rem solid rgb(240, 203, 41);
+            }
+
+        }
+
+    }
 
 
 }

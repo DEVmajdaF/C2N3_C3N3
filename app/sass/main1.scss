@@ -5,12 +5,35 @@
 
 
 
+
+
 * {
-    padding: 0;
-    margin: 0;
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Cairo', sans-serif;
     font-size: 100%;
 
+
+    @include responsive(desktop) {
+        font-size: 95%;
+    }
+
+    @include responsive(big-tablet) {
+        font-size: 90%;
+    }
+
+    @include responsive(tablet) {
+        font-size: 85%;
+    }
+
+    @include responsive(phone) {
+        font-size: 50%;
+
+    }
+
 }
+
+
 
 .conseil {
 

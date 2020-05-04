@@ -5,6 +5,29 @@ let answers = document.getElementById("answers");
 let form = document.getElementById("form");
 let elem = document.getElementById("progress-done")
 let submit = document.getElementById("submit")
+let paragraphResult = document.getElementById("resultat_paragra1")
+let preambule = document.getElementById("preambule");
+let resultat = document.getElementById("resultat");
+let btn = document.getElementById("testbtn")
+let prgressBar = document.getElementById("prgressBar")
+let span2 = document.querySelector(".span2")
+let span3 = document.querySelector(".span3")
+
+preambule.style.display = "block"
+
+function shownext() {
+
+    form.classList.remove("hide");
+    preambule.style.display = "none"
+    span2.classList.remove("hide");
+
+}
+
+
+
+
+
+
 let usersAnswers = [];
 let isBelowThreshold = (currentValue) => currentValue == "Non";
 // let facteurGMineur = [usersAnswers[2] >= 39, usersAnswers[7] == "Oui", usersAnswers[10] === "Très fatigué(e)", usersAnswers[10] === "Fatigué(e)"];
@@ -25,7 +48,6 @@ var rsltsymptome = 0;
 
 Questions = [
 
-
     {
         "question": '<p class="form__question"> Quel est votre âge ? </p>',
 
@@ -35,14 +57,14 @@ Questions = [
     {
         "question": '<p class="form__question"> Pensez-vous avoir ou avoir eu de la fièvre ces 10 derniers jours (frissons, sueurs) ? </p>',
 
-        "rep": '<input type="radio" class="form__choice" name="question" value="Oui"><label for="oui">Oui</label> <br> <input type="radio" class="form__choice" name="question" value="Non"><label for="non">Non</label><br><br>',
+        "rep": '<input type="radio" class="form__choice" name="question" value="Oui"><label for="oui">Oui <span class="fake-radio"> </span> </label> <br> <input type="radio" class="form__choice" name="question" value="Non"><label for="non"> Non  <span class="fake-radio1"></span>  </label><br><br>',
     },
 
     {
         "question": '<p class="form__question">Quelle est votre température corporelle ?</p>',
         "rep":
 
-            '<input type="number" class="form__choice" placeholder="34 - 42" min="34" max="42"> <label>°c</label><br><br>',
+            '<input type="number" class="form__choice" placeholder="34 - 42" min="34" max="42"> <label></label><br><br>',
     },
 
     {
@@ -97,13 +119,13 @@ Questions = [
 
     {
         "question": '<p class="form__question">Quel est votre poids ? Afin de calculer l’indice de masse corporelle qui est un facteur influençant le risque de complications de l’infection </p>',
-        "rep": '<input type="number" class="form__choice" name="question"  placeholder="40 - 150" min="40" max="150"> <label>KG</label><br><br>',
+        "rep": '<input type="number" class="form__choice" name="question"  placeholder="40 - 150" min="40" max="150"> <label></label><br><br>',
 
     },
 
     {
         "question": '<p class="form__question">Quelle est votre taille ? Afin de calculer l’indice de masse corporelle qui est un facteur influençant le risque de complications de l’infection. </p>',
-        "rep": '<input type="number"  class="form__choice" name="question" placeholder="80 - 110" min="80" max="110"> <label> CM </label>',
+        "rep": '<input type="number"  class="form__choice" name="question" placeholder="80 - 110" min="80" max="110"> <label>  </label>',
     },
     {
         "question": '<p class="form__question">Avez-vous de l’hypertension artérielle mal équilibrée ? Ou avez-vous une maladie cardiaque ou vasculaire ? Ou prenez-vous un traitement à visée cardiologique ? </p>',
@@ -147,6 +169,7 @@ Questions = [
 ];
 
 
+
 // function myMove() {
 //     var elem = document.getElementById("progress-done");
 //     var width = 0;
@@ -165,6 +188,8 @@ Questions = [
 
 
 function app() {
+
+    next.disabled = true;
     if (quest.innerHTML = Questions[counter].question) {
         back.style.display = "none"
         submit.style.display = "none"
@@ -180,6 +205,7 @@ function app() {
 
         answers.innerHTML = Questions[counter].rep;
     }
+
     let inputall = document.querySelectorAll('input.form__choice');
 
     pushData(inputall)
@@ -192,6 +218,7 @@ app();
 
 next.addEventListener("click", function () {
     back.style.display = "inline-block"
+    next.disabled = true;
 
     counter++
     //show question 
@@ -204,7 +231,10 @@ next.addEventListener("click", function () {
         submit.style.display = "block"
     }
     let inputall = document.querySelectorAll('input.form__choice');
+
+
     // myMove()
+
     pushData(inputall)
 });
 
@@ -228,69 +258,31 @@ function pushData(inputall) {
         let answer = inputall[i].value
 
         inputall[i].addEventListener("change", function () {
-            if (inputall[i].type === "number" || inputall[i].type === "text") {
-                let answer = inputall[i].value
-                console.log(answer)
-                usersAnswers.splice(counter, 1, answer);
-                console.log(usersAnswers)
+                if (inputall[i].type === "number" || inputall[i].type === "text" || inputall[i].type === "radio" && inputall[i].checked == true) {
+                    let answer = inputall[i].value
+                    console.log(answer)
+                    usersAnswers.splice(counter, 1, answer);
+                    console.log(usersAnswers)
+                    next.disabled = false
 
+                }
             }
 
-            if (inputall[i].type === "radio" && inputall[i].checked == true) {
-                let answer = inputall[i].value
-                console.log(answer)
-                usersAnswers.splice(counter, 1, answer);
-                console.log(usersAnswers)
-            }
-            //facteurGMineur
-            // if (counter === 2) {
+            // if (inputall[i].type === "radio" && inputall[i].checked == true) {
             //     let answer = inputall[i].value
-            //     facteurGMineur.push(answer);
-            //     facteurGMajeur.push(answer);
-            //     console.log(facteurGMineur)
-            // }
-            // if (counter === 7) {
-            //     let answer = inputall[i].value
-            //     facteurGMineur.splice(1, 1, answer);
-            //     console.log(facteurGMineur)
-            // }
-            // if (counter === 10) {
-            //     let answer = inputall[i].value
-            //     facteurGMineur.splice(2, 1, answer);
-            //     console.log(facteurGMineur)
-            // }
-            // //facteurGMajeur
-            // if (counter === 2) {
-            //     let answer = inputall[i].value
-            //     facteurGMajeur.splice(0, 1, answer);
-            //     console.log(facteurGMajeur)
-            // }
-            // if (counter === 9) {
-            //     let answer = inputall[i].value
-            //     facteurGMajeur.splice(1, 1, answer);
-            //     console.log(facteurGMajeur)
-            // }
-            // if (counter === 17) {
-            //     let answer = inputall[i].value
-            //     facteurGMajeur.splice(2, 1, answer);
-            //     console.log(facteurGMajeur)
-            // }
+            //     console.log(answer)
+            //     if (!inputall[i].value) {
+            //         alert("please choose One ")
+            //     } else {
+            //         usersAnswers.splice(counter, 1, answer);
+            //         console.log(usersAnswers)
 
-            // if (counter >= 14 && counter < 22) {
-            //     let answer = inputall[i].value
-            //     facteurPronost.splice(0, 1, answer);
-            //     console.log(facteurPronost)
-            // }
-            // for (var i = 0; i < counter.length; i++) {
-            //     if (counter === 2) {
-            //         let answer = inputall[i].value
-            //         facteurGMineur.push(i, 1, answer);
             //     }
-
-
-
             // }
-        });
+
+
+        );
+
     }
 };
 
@@ -360,63 +352,54 @@ submit.addEventListener("click", function () {
     //algorithme  premier cas  
     if ((usersAnswers[1] === "Oui") || (usersAnswers[3] === "Oui" && usersAnswers[5] === "Oui") || (usersAnswers[3] === "Oui" && usersAnswers[4] === "Oui") || (usersAnswers[6] === "Oui")) {
 
-        const isBelowThreshold = (currentValue) => currentValue == "Non";
+        const nonvalue = (currentValue) => currentValue == "Non";
 
-        console.log(facteurPronost.every(isBelowThreshold)); // expected output: true
-        if (facteurPronost.every(isBelowThreshold) === true) {
+        console.log(facteurPronost.every(nonvalue)); // expected output: true
+        if (facteurPronost.every(nonvalue) === true) {
             if ((usersAnswers[2] > 35.4 && usersAnswers[2] < 39) && (usersAnswers[8] === "Non") && (usersAnswers[9] === "Non") && usersAnswers[0] < 50) {
 
-                form.innerHTML = "nous vous conseillons de rester à votre domicile et de contacter votre médecin en cas d’apparition de nouveaux symptômes. Vous pourrez aussi utiliser à nouveau l’application pour réévaluer vos symptômes"
-            }
-            if ((usersAnswers[2] > 35.4 && usersAnswers[2] < 39) && (usersAnswers[8] === "Non") && (usersAnswers[9] === "Non") && (usersAnswers[0] >= 50 && usersAnswers[0] <= 69) && resultatMineur >= 1) {
+                paragraphResult.innerHTML = "nous vous conseillons de rester à votre domicile et de contacter votre médecin en cas d’apparition de nouveaux symptômes. Vous pourrez aussi utiliser à nouveau l’application pour réévaluer vos symptômes"
+            } else if ((usersAnswers[2] > 35.4 && usersAnswers[2] < 39) && (usersAnswers[8] === "Non") && (usersAnswers[9] === "Non") && (usersAnswers[0] >= 50 && usersAnswers[0] <= 69) && resultatMineur >= 1) {
 
-                form.innerHTML = "téléconsultation ou médecin généraliste ou visite à domicile "
+                paragraphResult.innerHTML = "téléconsultation ou médecin généraliste ou visite à domicile "
             }
-        }
-        if (facteurPronost.every(isBelowThreshold) === false) {
+        } else if (facteurPronost.every(nonvalue) === false) {
             if ((usersAnswers[2] > 35.4 && usersAnswers[2] < 39) && (usersAnswers[8] === "Non") && (usersAnswers[9] === "Non")) {
-                form.innerHTML = "téléconsultation ou médecin généraliste ou visite à domicile"
+                paragraphResult.innerHTML = "téléconsultation ou médecin généraliste ou visite à domicile"
 
-            }
-            if (resultatMineur === 1) {
-                form.innerHTML = "téléconsultation ou médecin généraliste ou visite à domicile "
+            } else if (resultatMineur === 1) {
+                paragraphResult.innerHTML = "téléconsultation ou médecin généraliste ou visite à domicile "
 
-            }
-            if (resultatMineur >= 2) {
-                form.innerHTML = "appel 141 "
+            } else if (resultatMineur >= 2) {
+                paragraphResult.innerHTML = "appel 141 "
             }
 
-        }
-        if ((facteurPronost.every(isBelowThreshold) === true || facteurPronost.every(isBelowThreshold) === false) && resultatMajeur >= 1) {
-            form.innerHTML = "appel 141, Pour tout patient orienté vers une téléconsultation ou médecin généraliste : préciser “appelez le 141 si une gêne respiratoire ou des difficultés importantes pour s’alimenter ou boire pendant plus de 24h apparaissent.”"
+        } else if ((facteurPronost.every(nonvalue) === true || facteurPronost.every(nonvalue) === false) && resultatMajeur >= 1) {
+            paragraphResult.innerHTML = "appel 141, Pour tout patient orienté vers une téléconsultation ou médecin généraliste : préciser “appelez le 141 si une gêne respiratoire ou des difficultés importantes pour s’alimenter ou boire pendant plus de 24h apparaissent.”"
 
         }
 
     }
     //algorithme  2eme  cas 
-    if ((usersAnswers[1] === "Oui") && (usersAnswers[3] === "Oui")) {
-        if (facteurPronost.every(isBelowThreshold) === true) {
+    else if ((usersAnswers[1] === "Oui") && (usersAnswers[3] === "Oui")) {
+        if (facteurPronost.every(nonvalue) === true) {
             if (resultatMajeur === 0 && resultatMineur >= 1) {
-                form.innerHTML = "téléconsultation ou médecin généraliste ou visite à domicile"
+                paragraphResult.innerHTML = "téléconsultation ou médecin généraliste ou visite à domicile"
 
             }
 
-        }
-        if (facteurPronost.every(isBelowThreshold) === false) {
+        } else if (facteurPronost.every(nonvalue) === false) {
             if (resultatMajeur === 0 && resultatMineur === 0) {
-                form.innerHTML = "téléconsultation ou médecin généraliste ou visite à domicile"
+                paragraphResult.innerHTML = "téléconsultation ou médecin généraliste ou visite à domicile"
 
-            }
-            if (resultatMineur >= 1) {
-                form.innerHTML = "téléconsultation ou médecin généraliste ou visite à domicile"
+            } else if (resultatMineur >= 1) {
+                paragraphResult.innerHTML = "téléconsultation ou médecin généraliste ou visite à domicile"
 
-            }
-            if (resultatMineur >= 1) {
-                form.innerHTML = "téléconsultation ou médecin généraliste ou visite à domicile"
+            } else if (resultatMineur >= 1) {
+                paragraphResult.innerHTML = "téléconsultation ou médecin généraliste ou visite à domicile"
 
-            }
-            if (resultatMineur >= 2) {
-                form.innerHTML = "appel 141 "
+            } else if (resultatMineur >= 2) {
+                paragraphResult.innerHTML = "appel 141 "
 
             }
 
@@ -428,26 +411,83 @@ submit.addEventListener("click", function () {
 
     }
     //  algorithme  3eme  cas
-    if (usersAnswers[1] === "Oui" || usersAnswers[3] === "Oui" || usersAnswers[4] === "Oui" || usersAnswers[5] === "Oui") {
+    else if (usersAnswers[1] === "Oui" || usersAnswers[3] === "Oui" || usersAnswers[4] === "Oui" || usersAnswers[5] === "Oui") {
 
         if (resultatMajeur === 0) {
-            form.innerHTML = "Votre situation ne relève probablement pas du Covid-19. Consultez votre médecin au moindre doute. "
+            paragraphResult.innerHTML = "Votre situation ne relève probablement pas du Covid-19. Consultez votre médecin au moindre doute. "
+
+        } else if (resultatMajeur >= 1 || facteurPronost.every(nonvalue) === false) {
+            paragraphResult.innerHTML = "Votre situation ne relève probablement pas du Covid-19. Un avis médical est recommandé. Au moindre doute, appelez le 141. "
 
         }
-        if (resultatMajeur >= 1 || facteurPronost.every(isBelowThreshold) === false) {
-            form.innerHTML = "Votre situation ne relève probablement pas du Covid-19. Un avis médical est recommandé. Au moindre doute, appelez le 141. "
-
-        }
 
 
-    }
-    if (rsltsymptome === 0) {
-        form.innerHTML = "Votre situation ne relève probablement pas du Covid-19. N’hésitez pas à contacter votre médecin en cas de doute. Vous pouvez refaire le test en cas de nouveau symptôme pour réévaluer la   situation.   Pour   toute information concernant   le   Covid-19 allez vers la page d’accueil."
+    } else if (rsltsymptome === 0) {
+        paragraphResult.innerHTML = "Votre situation ne relève probablement pas du Covid-19. N’hésitez pas à contacter votre médecin en cas de doute. Vous pouvez refaire le test en cas de nouveau symptôme pour réévaluer la   situation.   Pour   toute information concernant   le   Covid-19 allez vers la page d’accueil."
     }
 
 
-
-
-
+    form.classList.add("hide");
+    resultat.classList.remove("hide");
+    span3.classList.remove("hide");
 
 });
+
+
+
+
+
+
+
+
+
+
+
+//facteurGMineur
+// if (counter === 2) {
+//     let answer = inputall[i].value
+//     facteurGMineur.push(answer);
+//     facteurGMajeur.push(answer);
+//     console.log(facteurGMineur)
+// }
+// if (counter === 7) {
+//     let answer = inputall[i].value
+//     facteurGMineur.splice(1, 1, answer);
+//     console.log(facteurGMineur)
+// }
+// if (counter === 10) {
+//     let answer = inputall[i].value
+//     facteurGMineur.splice(2, 1, answer);
+//     console.log(facteurGMineur)
+// }
+// //facteurGMajeur
+// if (counter === 2) {
+//     let answer = inputall[i].value
+//     facteurGMajeur.splice(0, 1, answer);
+//     console.log(facteurGMajeur)
+// }
+// if (counter === 9) {
+//     let answer = inputall[i].value
+//     facteurGMajeur.splice(1, 1, answer);
+//     console.log(facteurGMajeur)
+// }
+// if (counter === 17) {
+//     let answer = inputall[i].value
+//     facteurGMajeur.splice(2, 1, answer);
+//     console.log(facteurGMajeur)
+// }
+
+// if (counter >= 14 && counter < 22) {
+//     let answer = inputall[i].value
+//     facteurPronost.splice(0, 1, answer);
+//     console.log(facteurPronost)
+// }
+// for (var i = 0; i < counter.length; i++) {
+//     if (counter === 2) {
+//         let answer = inputall[i].value
+//         facteurGMineur.push(i, 1, answer);
+//     }
+
+
+
+// }

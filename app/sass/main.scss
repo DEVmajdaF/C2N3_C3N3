@@ -117,10 +117,12 @@
         }
 
 
-        button {
-
-            @include button(#1078AD, white, 38.25rem, 3.25rem, 2rem);
-            line-height: 1;
+        #btn {
+            text-align: center;
+            text-decoration: none;
+            @include button (#1078AD, white, 36.5rem, 3.4rem, 2.3rem);
+            font-weight: bold;
+            line-height: 1.2;
 
         }
     }
@@ -399,12 +401,14 @@
         width: 6.625rem;
     }
 
-    button {
+    #btn {
+        text-align: center;
+        text-decoration: none;
         margin-top: 1.25rem;
         margin-bottom: 1.56rem;
         @include button (#1078AD, white, 36.5rem, 3.4rem, 2.3rem);
         font-weight: bold;
-        line-height: 1;
+        line-height: 1.2;
     }
 
 }
