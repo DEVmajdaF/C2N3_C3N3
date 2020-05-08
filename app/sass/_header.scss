@@ -7,9 +7,6 @@ body {
 }
 
 .hero-header {
-
-
-
     .navbar {
         background-color: #D0E5F0;
         background-image: url(../../Design/Assets/png/bar-1.png);
@@ -22,7 +19,6 @@ body {
         margin: 0px auto;
         width: 100%;
 
-
         .navbar_logo {
             width: 5.56rem;
             margin-left: 40px;
@@ -33,14 +29,11 @@ body {
             }
         }
 
-
         .navbar_btn {
             display: flex;
             flex-direction: row;
             justify-content: space-around;
             align-items: center;
-
-
 
             a {
                 text-decoration: none;
@@ -53,9 +46,6 @@ body {
                     margin-left: 20px;
 
                 }
-
-
-
             }
 
             .arabi {

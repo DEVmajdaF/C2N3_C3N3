@@ -11,6 +11,12 @@
     outline: none;
     cursor: pointer;
 
+    &:hover {
+        color: $b-color;
+        background-color: transparent;
+        border: 2px solid $b-color;
+    }
+
 
 
 }
@@ -35,6 +41,11 @@
         height: 40px;
         font-size: 1.8rem;
 
+    }
+
+    &:hover {
+       
+        border: 2px solid $color1;
     }
 
 }

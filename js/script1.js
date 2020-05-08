@@ -12,6 +12,12 @@ let btn = document.getElementById("testbtn")
 let prgressBar = document.getElementById("prgressBar")
 let span2 = document.querySelector(".span2")
 let span3 = document.querySelector(".span3")
+let modal = document.getElementById("brchr")
+let brochurebtn = document.getElementById("information-3-btn")
+
+
+
+
 
 preambule.style.display = "block"
 
@@ -22,6 +28,16 @@ function shownext() {
     span2.classList.remove("hide");
 
 }
+
+// function brochbtn() {
+//     if (modal.style.display == "none") {
+//         modal.style.display = "block"
+
+//     } else {
+//         modal.style.display = "none"
+//     }
+// };
+
 
 
 
@@ -57,112 +73,114 @@ Questions = [
     {
         "question": '<p class="form__question"> Pensez-vous avoir ou avoir eu de la fièvre ces 10 derniers jours (frissons, sueurs) ? </p>',
 
-        "rep": '<input type="radio" class="form__choice" name="question" value="Oui"><label for="oui">Oui <span class="fake-radio"> </span> </label> <br> <input type="radio" class="form__choice" name="question" value="Non"><label for="non"> Non  <span class="fake-radio1"></span>  </label><br><br>',
+        "rep": '<label for="oui" > <input type="radio" id="oui" class="form__choice" name="question" value="Oui"> Oui   <span class="fake-radio"> </span> </label><label for="non"> <input type="radio" id="non" class="form__choice" name="question" value="Non">Non  <span class="fake-radio"></span>  </label>',
     },
 
     {
         "question": '<p class="form__question">Quelle est votre température corporelle ?</p>',
         "rep":
 
-            '<input type="number" class="form__choice" placeholder="34 - 42" min="34" max="42"> <label></label><br><br>',
+            '<input type="number" class="form__choice" placeholder="34 - 42" min="34" max="42">',
     },
 
     {
         "question": '<p class="form__question"> Ces derniers jours, avez-vous une toux ou une augmentation de votre toux habituelle ?</p>',
 
-        "rep": ' <input type="radio" class="form__choice" name="question" value="Oui"><label for="oui">Oui</label> <br> <input type="radio" class="form__choice" value="Non" name="question"><label for="non">Non</label><br><br>',
+        "rep": '<label for="oui" > <input type="radio" id="oui" class="form__choice" name="question" value="Oui"> Oui   <span class="fake-radio"> </span> </label><label for="non"  class="radio"> <input type="radio" id="non" class="form__choice" name="question" value="Non">Non  <span class="fake-radio"></span>  </label>',
     },
 
     {
         "question": '<p class="form__question"> Avez-vous eu des courbatures inhabituelles au cours des derniers jours ? </p>',
 
-        "rep": ' <input type="radio" class="form__choice" name="question" value="Oui"><label for="oui">Oui</label> <br> <input type="radio" class="form__choice" value="Non" name="question"><label for="non">Non</label><br><br>',
+        "rep": '<label for="oui" > <input type="radio" id="oui" class="form__choice" name="question" value="Oui"> Oui   <span class="fake-radio"> </span> </label><label for="non"  class="radio"> <input type="radio" id="non" class="form__choice" name="question" value="Non">Non  <span class="fake-radio"></span>  </label>'
     },
 
     {
         "question": '<p class="form__question"> Ces derniers jours, avez-vous un mal de gorge ? </p>',
 
-        "rep": ' <input type="radio" class="form__choice" value="Oui" name="question"><label for="oui">Oui</label>  <input type="radio" class="form__choice" value="Non" name="question"><label for="non">Non</label>',
+        "rep": '<label for="oui" > <input type="radio" id="oui" class="form__choice" name="question" value="Oui"> Oui   <span class="fake-radio"> </span> </label><label for="non"  class="radio"> <input type="radio" id="non" class="form__choice" name="question" value="Non">Non  <span class="fake-radio"></span>  </label>'
     },
 
     {
         "question": '<p class="form__question"> Ces dernières 24 heures, avez-vous de la diarrhée ? Avec au moins 3 selles molles. </p>',
 
-        "rep": ' <input type="radio" class="form__choice" value="Oui" name="question"><label for="oui">Oui</label>  <input type="radio" class="form__choice" value="Non" name="question"><label for="non">Non</label>',
+        "rep": '<label for="oui" > <input type="radio" id="oui" class="form__choice" name="question" value="Oui"> Oui   <span class="fake-radio"> </span> </label><label for="non"  class="radio"> <input type="radio" id="non" class="form__choice" name="question" value="Non">Non  <span class="fake-radio"></span>  </label>'
     },
 
     {
         "question": '<p class="form__question">Ces derniers jours, avez-vous une fatigue inhabituelle qui vous a obligé à vous reposer plus de la moitié de la journée ? </p>',
 
-        "rep": ' <input type="radio" class="form__choice" value="Oui" name="question"><label for="oui">Oui</label>  <input type="radio" class="form__choice" value="Non" name="question"><label for="non">Non</label>',
+        "rep": '<label for="oui" > <input type="radio" id="oui" class="form__choice" name="question" value="Oui"> Oui   <span class="fake-radio"> </span> </label><label for="non"  class="radio"> <input type="radio" id="non" class="form__choice" name="question" value="Non">Non  <span class="fake-radio"></span>  </label>'
     },
     {
         "question": '<p class="form__question">Avez-vous des difficultés importantes pour vous alimenter ou boire depuis plus de 24h ? </p>',
 
-        "rep": ' <input type="radio" class="form__choice" value="Oui" name="question"><label for="oui">Oui</label>  <input type="radio" class="form__choice"value="Non" name="question"><label for="non">Non</label>',
+        "rep": '<label for="oui" > <input type="radio" id="oui" class="form__choice" name="question" value="Oui"> Oui   <span class="fake-radio"> </span> </label><label for="non"  class="radio"> <input type="radio" id="non" class="form__choice" name="question" value="Non">Non  <span class="fake-radio"></span>  </label>'
     },
     {
         "question": '<p class="form__question"> Dans les dernières 24 heures, avez-vous noté un manque de souffle inhabituel lorsque vous parlez ou faites un petit effort ? </p>',
 
-        "rep": ' <input type="radio" class="form__choice" value="Oui" name="question"><label for="oui">Oui</label>  <input type="radio" class="form__choice" value="Non" name="question"><label for="non">Non</label>',
+        "rep": '<label for="oui" > <input type="radio" id="oui" class="form__choice" name="question" value="Oui"> Oui   <span class="fake-radio"> </span> </label><label for="non"  class="radio"> <input type="radio" id="non" class="form__choice" name="question" value="Non">Non  <span class="fake-radio"></span>  </label>'
     },
 
     {
         "question": '<p class="form__question"> Actuellement, comment vous vous sentez ? </p>',
-        "rep": ' <input type="radio" class="form__choice" name="question" value="bien" ><label for="bien">Bien</label><input type="radio" class="form__choice" name="question" value="abien" ><label for="abien">Assez bien</label><input type="radio" class="form__choice" name="question" value="fatigue" ><label for="fatigue">Fatigué(e)</label><input type="radio" class="form__choice" name="question" value="tfatigue" ><label for="tfatigue">Très fatigué(e)</label><br><br>',
-    },
-
-    {
-        "question": '<p class="form__question"> Avez-vous d’autre symptôme ?  </p>',
-        "rep": ' <input type="text" class="form__choice" value="symptome" name="question">',
+        "rep": ' <label for="bien"><input type="radio" id="bien" class="form__choice" name="question" value="bien">Bien<span></span></label><label for="abien"><input type="radio" id="abien" class="form__choice" name="question" value="abien">Assez Bien<span></span></label><label for="fatigue"><input type="radio" id="fatigue" class="form__choice" name="question" value="fatigue">Fatigué(e) <span></span></label><label for="tfatigue"><input type="radio" id="tfatigue" class="form__choice" name="question" value="Tfatigue">Très fatigué(e)<span></span></label>',
     },
 
     {
         "question": '<p class="form__question">Quel est votre poids ? Afin de calculer l’indice de masse corporelle qui est un facteur influençant le risque de complications de l’infection </p>',
-        "rep": '<input type="number" class="form__choice" name="question"  placeholder="40 - 150" min="40" max="150"> <label></label><br><br>',
-
+        "rep": '<input type="number" class="form__choice" name="question"  placeholder="40 - 150" min="40" max="150">',
     },
 
     {
         "question": '<p class="form__question">Quelle est votre taille ? Afin de calculer l’indice de masse corporelle qui est un facteur influençant le risque de complications de l’infection. </p>',
-        "rep": '<input type="number"  class="form__choice" name="question" placeholder="80 - 110" min="80" max="110"> <label>  </label>',
-    },
-    {
-        "question": '<p class="form__question">Avez-vous de l’hypertension artérielle mal équilibrée ? Ou avez-vous une maladie cardiaque ou vasculaire ? Ou prenez-vous un traitement à visée cardiologique ? </p>',
-        "rep": '<input type="radio" class="form__choice" name="question" value="Oui"><label for="oui">Oui</label> <br> <input type="radio" class="form__choice" name="question" value="Non"><label for="non">Non</label><br><br>',
-    },
-    {
-        "question": '<p class="form__question">Êtes-vous diabétique ? </p>',
-        "rep": ' <input type="radio" class="form__choice" name="question" value="Oui"><label for="oui">Oui</label> <br> <input type="radio" class="form__choice" value="Non" name="question"><label for="non">Non</label><br><br>',
-    },
-    {
-        "question": '<p class="form__question">Avez-vous ou avez-vous eu un cancer ? </p>',
-        "rep": '<input type="radio" class="form__choice" name="question" value="Oui"><label for="oui">Oui</label> <br> <input type="radio" class="form__choice" value="Non" name="question"><label for="non">Non</label><br><br>',
-    },
-    {
-        "question": '<p class="form__question">Avez-vous une maladie respiratoire ? Ou êtes-vous suivi par un pneumologue ? </p>',
-        "rep": ' <input type="radio" class="form__choice" name="question" value="Oui"><label for="oui">Oui</label> <br> <input type="radio" class="form__choice" value="Non" name="question"><label for="non">Non</label><br><br>',
-    },
-    {
-        "question": '<p class="form__question">Avez-vous une insuffisance rénale chronique dialysée ? </p>',
-        "rep": ' <input type="radio" class="form__choice" name="question" value="Oui"><label for="oui">Oui</label> <br> <input type="radio" class="form__choice" value="Non" name="question"><label for="non">Non</label><br><br>',
-    },
-    {
-        "question": '<p class="form__question">Avez-vous une maladie chronique du foie ? </p>',
-        "rep": ' <input type="radio" class="form__choice" name="question" value="Oui"><label for="oui">Oui</label> <br> <input type="radio" class="form__choice" value="Non" name="question"><label for="non">Non</label><br><br>',
+        "rep": '<input type="number"  class="form__choice" name="question" placeholder="80 - 110" min="80" max="110">',
     },
 
     {
-        "question": '<p class="form__question">pÊtes-vous enceinte ? </p>',
-        "rep": ' <input type="radio" class="form__choice" name="question" value="Oui"><label for="oui">Oui</label> <br> <input type="radio" class="form__choice" value="Non" name="question"><label for="non">Non</label><br><br>',
+        "question": '<p class="form__question">Avez-vous de l’hypertension artérielle mal équilibrée ? Ou avez-vous une maladie cardiaque ou vasculaire ? Ou prenez-vous un traitement à visée cardiologique ? </p>',
+        "rep": '<label for="oui" > <input type="radio" id="oui" class="form__choice" name="question" value="Oui"> Oui   <span class="fake-radio"> </span> </label><label for="non"  class="radio"> <input type="radio" id="non" class="form__choice" name="question" value="Non">Non  <span class="fake-radio"></span>  </label>'
     },
+
+    {
+        "question": '<p class="form__question">Êtes-vous diabétique ? </p>',
+        "rep": '<label for="oui" > <input type="radio" id="oui" class="form__choice" name="question" value="Oui"> Oui   <span class="fake-radio"> </span> </label><label for="non"  class="radio"> <input type="radio" id="non" class="form__choice" name="question" value="Non">Non  <span class="fake-radio"></span>  </label>'
+    },
+
+    {
+        "question": '<p class="form__question">Avez-vous ou avez-vous eu un cancer ? </p>',
+        "rep": '<label for="oui" > <input type="radio" id="oui" class="form__choice" name="question" value="Oui"> Oui   <span class="fake-radio"> </span> </label><label for="non"  class="radio"> <input type="radio" id="non" class="form__choice" name="question" value="Non">Non  <span class="fake-radio"></span>  </label>'
+    },
+
+    {
+        "question": '<p class="form__question">Avez-vous une maladie respiratoire ? Ou êtes-vous suivi par un pneumologue ? </p>',
+        "rep": '<label for="oui" > <input type="radio" id="oui" class="form__choice" name="question" value="Oui"> Oui   <span class="fake-radio"> </span> </label><label for="non"  class="radio"> <input type="radio" id="non" class="form__choice" name="question" value="Non">Non  <span class="fake-radio"></span>  </label>'
+    },
+
+    {
+        "question": '<p class="form__question">Avez-vous une insuffisance rénale chronique dialysée ? </p>',
+        "rep": '<label for="oui" > <input type="radio" id="oui" class="form__choice" name="question" value="Oui"> Oui   <span class="fake-radio"> </span> </label><label for="non"  class="radio"> <input type="radio" id="non" class="form__choice" name="question" value="Non">Non  <span class="fake-radio"></span>  </label>'
+    },
+
+    {
+        "question": '<p class="form__question">Avez-vous une maladie chronique du foie ? </p>',
+        "rep": '<label for="oui" > <input type="radio" id="oui" class="form__choice" name="question" value="Oui"> Oui   <span class="fake-radio"> </span> </label><label for="non"  class="radio"> <input type="radio" id="non" class="form__choice" name="question" value="Non">Non  <span class="fake-radio"></span>  </label>'
+    },
+
+    {
+        "question": '<p class="form__question">Êtes-vous enceinte ? </p>',
+        "rep": '<label for="oui" > <input type="radio" id="oui" class="form__choice" name="question" value="Oui"> Oui   <span class="fake-radio"> </span> </label><label for="non"  class="radio"> <input type="radio" id="non" class="form__choice" name="question" value="Non">Non  <span class="fake-radio"></span>  </label>'
+    },
+
     {
         "question": '<p class="form__question">Avez-vous une maladie connue pour diminuer vos défenses immunitaires ? </p>',
-        "rep": ' <input type="radio" class="form__choice" name="question" value="Oui"><label for="oui">Oui</label> <br> <input type="radio" class="form__choice" value="Non" name="question"><label for="non">Non</label><br><br>',
+        "rep": '<label for="oui" > <input type="radio" id="oui" class="form__choice" name="question" value="Oui"> Oui   <span class="fake-radio"> </span> </label><label for="non"  class="radio"> <input type="radio" id="non" class="form__choice" name="question" value="Non">Non  <span class="fake-radio"></span>  </label>'
     },
+
     {
         "question": '<p class="form__question">Prenez-vous un traitement immunosuppresseur ? C’est un traitement qui diminue vos défenses contre les infections. Voici quelques exemples : corticoïdes, méthotrexate, ciclosporine, tacrolimus, azathioprine, cyclophosphamide (liste non exhaustive). </p>',
-        "rep": ' <input type="radio" class="form__choice" name="question" value="Oui"><label for="oui">Oui</label> <br> <input type="radio" class="form__choice" value="Non" name="question"><label for="non">Non</label><br><br>',
+        "rep": '<label for="oui" > <input type="radio" id="oui" class="form__choice" name="question" value="Oui"> Oui   <span class="fake-radio"> </span> </label><label for="non"  class="radio"> <input type="radio" id="non" class="form__choice" name="question" value="Non">Non  <span class="fake-radio"></span>  </label>'
     },
 
 
@@ -229,6 +247,13 @@ next.addEventListener("click", function () {
         back.style.display = "none"
         next.style.display = "none"
         submit.style.display = "block"
+    }
+    if (usersAnswers[0] <= 15) {
+        resultat.classList.remove("hide");
+        form.classList.add("hide");
+        span3.classList.remove("hide");
+        paragraphResult.innerHTML = " Prenez contact avec votre médecin généraliste au moindre doute. Cette application n’est pour l’instant pas adaptée aux personnes de moins de 15 ans. En cas d’urgence, appeler le 15."
+
     }
     let inputall = document.querySelectorAll('input.form__choice');
 
@@ -304,11 +329,11 @@ submit.addEventListener("click", function () {
             facteurGMajeur.push(usersAnswers[i])
         }
         //facteurspronosti
-        if (i >= 14 && i <= 22) {
+        if (i >= 13 && i <= 22) {
             facteurPronost.push(usersAnswers[i])
         }
         //symptome
-        if (i >= 0 && i <= 11) {
+        if (i >= 0 && i <= 10) {
             Symptome.push(usersAnswers[i])
 
         }
@@ -338,13 +363,28 @@ submit.addEventListener("click", function () {
 
     }
     //resultat Symptme
-    for (let i = 0; i < Symptome.length; i++) {
-        if (usersAnswers[i] === "Oui") {
 
-        }
 
+    if (
+        facteurGMajeur[1] === "Oui" ||
+        facteurGMajeur[3] === "Oui" ||
+        facteurGMajeur[4] === "Oui" ||
+        facteurGMajeur[5] === "Oui" ||
+        facteurGMajeur[6] === "Oui" ||
+        facteurGMajeur[7] === "Oui" ||
+        facteurGMajeur[8] === "Oui" ||
+        facteurGMajeur[9] === "Oui" ||
+        facteurGMajeur[10] === "Oui" ||
+        facteurGMajeur[11] === "Oui"
+
+    ) {
         rsltsymptome++
-    };
+    }
+
+
+
+
+
 
 
 
@@ -411,7 +451,7 @@ submit.addEventListener("click", function () {
 
     }
     //  algorithme  3eme  cas
-    else if (usersAnswers[1] === "Oui" || usersAnswers[3] === "Oui" || usersAnswers[4] === "Oui" || usersAnswers[5] === "Oui") {
+    if (usersAnswers[1] === "Oui" || usersAnswers[3] === "Oui" || usersAnswers[4] === "Oui" || usersAnswers[5] === "Oui") {
 
         if (resultatMajeur === 0) {
             paragraphResult.innerHTML = "Votre situation ne relève probablement pas du Covid-19. Consultez votre médecin au moindre doute. "
@@ -422,9 +462,11 @@ submit.addEventListener("click", function () {
         }
 
 
-    } else if (rsltsymptome === 0) {
-        paragraphResult.innerHTML = "Votre situation ne relève probablement pas du Covid-19. N’hésitez pas à contacter votre médecin en cas de doute. Vous pouvez refaire le test en cas de nouveau symptôme pour réévaluer la   situation.   Pour   toute information concernant   le   Covid-19 allez vers la page d’accueil."
     }
+
+    if (rsltsymptome === 0) {
+        paragraphResult.innerHTML = "Votre situation ne relève probablement pas du Covid-19. N’hésitez pas à contacter votre médecin en cas de doute. Vous pouvez refaire le test en cas de nouveau symptôme pour réévaluer la   situation.   Pour   toute information concernant   le   Covid-19 allez vers la page d’accueil."
+    };
 
 
     form.classList.add("hide");
