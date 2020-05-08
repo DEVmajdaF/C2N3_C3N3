@@ -18,7 +18,6 @@ let brochurebtn = document.getElementById("information-3-btn")
 
 
 
-
 preambule.style.display = "block"
 
 function shownext() {
@@ -259,7 +258,7 @@ next.addEventListener("click", function () {
 
 
     // myMove()
-
+    update()
     pushData(inputall)
 });
 
